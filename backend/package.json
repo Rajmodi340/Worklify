@@ -7,13 +7,15 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "nodemon index.js",
-    "start": "node index.js"
+    "start": "node index.js",
+      "build": "echo Build completed"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "bcryptjs": "^3.0.3",
+    "cookie-parser": "^1.4.7",
     "cors": "^2.8.6",
     "dotenv": "^17.2.4",
     "exceljs": "^4.4.0",
