@@ -1,4 +1,4 @@
-export const BASE_URL = "http://localhost:9876";
+export const BASE_URL = "https://worklify-6.onrender.com";
 
 export const API_PATHS = {
     AUTH: {
