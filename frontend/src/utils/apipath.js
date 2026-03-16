@@ -1,6 +1,12 @@
 
 export const BASE_URL = import.meta.env.VITE_API_URL || "http://localhost:9876";
+<<<<<<< HEAD
 
+=======
+=======
+export const BASE_URL = "https://worklify-2.onrender.com";
+>>>>>>> 882053a2c45f9cc2de4833c5b259381e535d9426
+>>>>>>> cb0c6fd8dfc04a8e4b65bd61d6957a27fdd440b2
 
 export const API_PATHS = {
     AUTH: {
