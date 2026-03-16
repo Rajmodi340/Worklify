@@ -34,7 +34,7 @@ const connectDB = async () => {
 // Apply middleware first (before routes)
 app.use(
     cors({
-        origin: process.env.CLIENT_URL || "http://localhost:5173",
+        origin:"https://worklify-5.onrender.com",
         methods: ["GET", "POST", "PUT", "DELETE"],
         allowedHeaders: ["Content-Type", "Authorization"],
         credentials: true
