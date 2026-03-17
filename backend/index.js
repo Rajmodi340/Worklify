@@ -34,12 +34,11 @@ const connectDB = async () => {
 // Apply middleware first (before routes)
 app.use(
     cors({
-        origin: [
-           
-            "http://localhost:5173",
-           
-        ],
-        methods: ["GET", "POST", "PUT", "DELETE"],
+        origin: function(origin, callback){
+            // Allow any origin for now (useful when frontend URL is unknown)
+            return callback(null, true);
+        },
+        methods: ["GET", "POST", "PUT", "DELETE", "PATCH", "OPTIONS"],
         allowedHeaders: ["Content-Type", "Authorization"],
         credentials: true
     })

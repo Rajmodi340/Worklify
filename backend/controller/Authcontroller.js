@@ -70,7 +70,12 @@ if(!isPasswordCorrect){
 const token=jwt.sign({id:user._id, role:user.role},process.env.JWT_SECRET)
 console.log(token)
 const {password:pass,...rest}=user._doc
-res.status(200).cookie("access_token",token,{httpOnly:true}).json(rest)
+const isProduction = process.env.NODE_ENV === "production" || process.env.NODE_ENV === "production ";
+res.status(200).cookie("access_token",token,{
+    httpOnly: true,
+    sameSite: isProduction ? "none" : "lax",
+    secure: isProduction
+}).json(rest)
     }
     catch(error){
 next(error)
@@ -122,9 +127,8 @@ next(error)
       return next(errorHandler(400, "No file uploaded"))
     }
 
-    const imageUrl = `${req.protocol}://${req.get("host")}/uploads/${
-      req.file.filename
-    }`
+    // Save relative path so it works everywhere
+    const imageUrl = `/uploads/${req.file.filename}`
 
     res.status(200).json({ imageUrl })
   } catch (error) {
