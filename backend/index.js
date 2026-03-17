@@ -34,11 +34,20 @@ const connectDB = async () => {
 // Apply middleware first (before routes)
 app.use(
     cors({
+
         origin: function(origin, callback){
             // Allow any origin for now (useful when frontend URL is unknown)
             return callback(null, true);
         },
         methods: ["GET", "POST", "PUT", "DELETE", "PATCH", "OPTIONS"],
+
+        origin: [
+           
+            "https://worklify-frontend-m3nb.onrender.com",
+           
+        ],
+        methods: ["GET", "POST", "PUT", "DELETE"],
+
         allowedHeaders: ["Content-Type", "Authorization"],
         credentials: true
     })
