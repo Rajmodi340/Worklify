@@ -36,7 +36,7 @@ app.use(
     cors({
         origin: [
            
-            "http://localhost:5173",
+            "https://worklify-frontend-m3nb.onrender.com",
            
         ],
         methods: ["GET", "POST", "PUT", "DELETE"],
