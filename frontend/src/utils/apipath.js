@@ -1,5 +1,5 @@
 
-export const BASE_URL = "https://worklify-backends.onrender.com";
+export const BASE_URL = "http://localhost:9876";
 
 
 // export const BASE_URL = "https://worklify-2.onrender.com";
